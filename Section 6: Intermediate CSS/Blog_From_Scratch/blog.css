@@ -4,7 +4,7 @@
 }
 
 
-div {
+body {
     margin-left:15%;
     margin-right:15%;
     border: 20px solid #bdc3c7;
@@ -13,17 +13,22 @@ div {
 h2{
     text-transform: uppercase;
     color: #3498db;
-    margin-left: 1%;
-    font-size: 20px;
-    letter-spacing: 2px;
+    margin-left: 2%;
+    font-size: 18px;
+    letter-spacing: 4px;
+    font-weight: lighter;
 }
 h1 {
     color: #2c3e50;
-    margin-left: 1%;
+    margin-left: 2%;
 }
 
 div p:nth-of-type(1) {
     border-left: 5px solid #bdc3c7;
     margin-left: 1%;
     padding-left: 1%;
+}
+
+div p:not(:first-child) {
+    margin-left: 2%;
 }
