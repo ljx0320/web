@@ -17,8 +17,11 @@ app.get("/dio", function (req,res) {
 // Thus we make a pattern! Notice the /:info
 app.get("/stand/:info", function (req,res) {
     // Try searching /stand/starplatinum or /stand/world
-    res.send("This is a stand!");
+    res.send("This is " + req.params.info + "!");
 });
+
+// Rule is, add : to any variable!
+
 
 // Anything else will be responded with "destiny"
 app.get("*", function (req,res) {
