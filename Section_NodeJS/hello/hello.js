@@ -28,6 +28,7 @@ app.get("*", function (req,res) {
     res.send("This is destiny!");
 });
 
+
 app.listen(process.env.PORT || 3000, process.env.IP, function () {
     console.log("Server has started!");
 });
