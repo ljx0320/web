@@ -1,13 +1,5 @@
 var mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/blog_demo");
-// USER - email, name
-
-var userSchema = new mongoose.Schema({
-   email: String,
-   name: String
-});
-
-var User = mongoose.model("User", userSchema);
 
 // POST - title, content
 
@@ -17,6 +9,18 @@ var postSchema = new mongoose.Schema({
 });
 
 var Post = mongoose.model("Post",postSchema);
+
+
+
+// USER - email, name
+
+var userSchema = new mongoose.Schema({
+   email: String,
+   name: String
+});
+
+var User = mongoose.model("User", userSchema);
+
 
 /*
 var newUser = new User({
@@ -32,7 +36,8 @@ newUser.save(function (error, user) {
        console.log(user);
    }
 });
-*/
+
+
 
 var newPost = new Post({
    title: "abc",
@@ -47,3 +52,4 @@ newPost.save(function (err,post) {
        console.log(post);
    }
 });
+*/
