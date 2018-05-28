@@ -2,7 +2,8 @@ var express = require("express"),
     app = express(),
     bodyParser = require("body-parser"),
     mongoose = require("mongoose"),
-    Campground = require("./models/campground");
+    Campground = require("./models/campground"),
+    Comments = require("./models/comment"),
     seedDB = require("./seeds");
 
 seedDB();
@@ -93,11 +94,12 @@ app.get("/campgrounds/new", function (req, res) {
 
 
 app.get("/campgrounds/:id",function (req,res) {
-    Campground.findById(req.params.id, function (error,foundCampground) {
+    Campground.findById(req.params.id).populate("comments").exec(function (error,foundCampground) {
         if (error){
             console.log(error);
         }
         else {
+            console.log(foundCampground);
             res.render("show",{campground:foundCampground});
         }
     })
