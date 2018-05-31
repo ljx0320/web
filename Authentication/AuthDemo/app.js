@@ -51,6 +51,7 @@ app.get("/register", function (req, res) {
    res.render("register");
 });
 
+
 // Handling user sign up
 app.post("/register", function (req, res) {
     User.register(new User({username: req.body.username}), req.body.password, function (err, user) {
@@ -63,6 +64,12 @@ app.post("/register", function (req, res) {
        });
     });
 });
+
+
+app.get("/login", function (req, res) {
+   res.render("login");
+});
+
 
 
 app.listen(process.env.PORT || 3000, process.env.IP, function () {
