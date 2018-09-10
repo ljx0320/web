@@ -13,7 +13,7 @@ router.get("/", function (req, res) {
 // ======================
 // Auth Routes
 
-
+ 
 
 // show sign up form
 router.get("/register", function (req, res) {
@@ -30,7 +30,7 @@ router.post("/register", function (req, res) {
         }
         else {
             passport.authenticate("local")(req, res, function () {
-                req.flasj("success","Welcome to YelpCamp " + user.username);
+                req.flash("success","Welcome to YelpCamp " + user.username);
                 res.redirect("/campgrounds");
             });
         }
